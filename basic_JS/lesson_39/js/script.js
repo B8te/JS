@@ -1,52 +1,43 @@
 "use strict";
 
-// To String
+// let number = 5; debugger
 
-// 1)
-console.log(typeof(String(null)));
-console.log(typeof(String(4)));
+// function logNumber() {
+//     let number = 4; debugger
+//     console.log(number);
+// }
 
-// 2)
-console.log(typeof(5 + ''));
+// number = 6;
 
+// logNumber(); debugger
 
-const num = 5;
+// number = 8;
 
-console.log("https://vk.com/catalog/" + num);
+// logNumber(); debugger
 
-const fontSize = 26 + 'px';
+function createCounter() {
+    let counter = 0;
 
-// To Number
+    const myFunction = function () {
+        counter = counter + 1;
+        return counter;
+    };
 
-// 1)
-console.log(typeof(Number('4')));
-
-// 2)
-console.log(typeof(+'4'));
-
-// 3)
-console.log(typeof(parseInt("15px", 10)));
-
-let answer = +prompt("Hello?", "");
-
-// To boolean
-
-// 1)
-let switcher = null;
-
-if (switcher) {
-    console.log('Working...');
+    return myFunction;
 }
 
-switcher = 1;
+const increment = createCounter();
+const c1 = increment();
+const c2 = increment();
+const c3 = increment();
 
-if (switcher) {
-    console.log('Working...');
+console.log(c1, c2, c3);
+
+// Некий вопрос на собеседовании
+
+for (let i = 0; i < 9; i++) {
+    for (let j = 0; j < 9; j++) {
+        let num = 3;
+    }
+    console.log(num); // будет выводиться ошибка, потому что переменная не входит как глобальная переменная
 }
-
-// 2)
-console.log(typeof(Boolean('4')));
-
-// 3)
-console.log(typeof(!!"444444"));
-
